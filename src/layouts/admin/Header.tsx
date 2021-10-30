@@ -139,18 +139,15 @@ const Header = () => {
             >
               App
             </Typography>
-            <Box sx={{ flexGrow: 1 }} />
-            <IconButton>
-              <NavLink to="/" style={{ color: "#fff" }}>
-                Home
-              </NavLink>
-            </IconButton>
-            <IconButton color="inherit">
-              <NavLink to="/about">About</NavLink>
-            </IconButton>
-            <IconButton color="inherit">
-              <NavLink to="/app/dashboard">Dashbaord</NavLink>
-            </IconButton>
+            <Button color="inherit" component={NavLink} to="/app/dashboard">
+              Dashbaord
+            </Button>
+            <Button color="inherit" component={NavLink} to="/app/setting">
+              Setting
+            </Button>
+            <Button color="inherit" component={NavLink} to="/">
+              Logout
+            </Button>
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               <IconButton

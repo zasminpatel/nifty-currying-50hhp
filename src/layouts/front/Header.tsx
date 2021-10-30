@@ -25,16 +25,15 @@ const Header = () => {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               App
             </Typography>
-            <Button color="inherit">
-              <NavLink to="/">Home</NavLink>
+            <Button color="inherit" component={NavLink} to="/">
+              Home
             </Button>
-            <Button color="inherit">
-              <NavLink to="/about">About</NavLink>
+            <Button color="inherit" component={NavLink} to="/about">
+              About
             </Button>
-            <Button color="inherit">
-              <NavLink to="/app/dashboard">Dashbaord</NavLink>
+            <Button color="inherit" component={NavLink} to="/app">
+              Login
             </Button>
-            <Button color="inherit">Login</Button>
           </Toolbar>
         </AppBar>
       </Box>
