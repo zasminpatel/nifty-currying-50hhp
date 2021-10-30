@@ -1,4 +1,5 @@
 import { Suspense, lazy } from "react";
+import { Navigate } from "react-router-dom";
 import FrontLayout from "./layouts/front";
 import AdminLayout from "./layouts/admin";
 
@@ -15,6 +16,12 @@ const Loader = (Component) => (props) => (
 );
 const HomePage = Loader(lazy(() => import("./pages/front/Home")));
 const AboutUsPage = Loader(lazy(() => import("./pages/front/AboutUs")));
+const Status404Page = Loader(
+  lazy(() => import("./pages/front/Status/Status404"))
+);
+const StatusComingSoonPage = Loader(
+  lazy(() => import("./pages/front/Status/StatusComingSoon"))
+);
 
 const DashboardPage = Loader(lazy(() => import("./pages/admin/Dashboard")));
 
@@ -24,11 +31,19 @@ const routes = [
     element: <AdminLayout />,
     children: [
       {
+        path: "",
+        element: <Navigate to="/app/dashboard" replace />
+      },
+      {
         path: "dashboard",
         element: <DashboardPage />
       },
       {
         path: "about",
+        element: <AboutUsPage />
+      },
+      {
+        path: "*",
         element: <AboutUsPage />
       }
     ]
@@ -44,6 +59,18 @@ const routes = [
       {
         path: "about",
         element: <AboutUsPage />
+      },
+      {
+        path: "404",
+        element: <Status404Page />
+      },
+      {
+        path: "coming-soon",
+        element: <StatusComingSoonPage />
+      },
+      {
+        path: "*",
+        element: <Navigate to="/404" replace />
       }
     ]
   }
