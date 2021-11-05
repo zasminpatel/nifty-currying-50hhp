@@ -11,7 +11,7 @@ interface FrontLayoutProps {
 }
 const MainContent = styled(Box)(
   ({ theme }) => `
-        margin-top: ${theme.header.height};
+        margin-top: 60px;
         flex: 1 1 auto;
         overflow-y: auto;
         overflow-x: hidden;

@@ -13,7 +13,7 @@ const Header = () => {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
-            <IconButton
+            {/* <IconButton
               size="large"
               edge="start"
               color="inherit"
@@ -21,9 +21,9 @@ const Header = () => {
               sx={{ mr: 2 }}
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton> */}
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              App
+              App - Fron End
             </Typography>
             <Button color="inherit" component={NavLink} to="/">
               Home
@@ -31,7 +31,7 @@ const Header = () => {
             <Button color="inherit" component={NavLink} to="/about">
               About
             </Button>
-            <Button color="inherit" component={NavLink} to="/app">
+            <Button color="inherit" component={NavLink} to="/login">
               Login
             </Button>
           </Toolbar>

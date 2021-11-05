@@ -2,7 +2,7 @@ import { Grid, Typography, Avatar } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { format } from "date-fns";
 import PageTitleWrapper from "../../../components/PageTitleWrapper";
-export default function Setting() {
+export default function Profile() {
   const user = { name: "jasmin patel", avatar: "1.jpg" };
   const theme = useTheme();
   return (
@@ -54,37 +54,10 @@ export default function Setting() {
             justifyContent="center"
             alignItems="stretch"
           >
-            {/* <Grid item sm={6} xs={12}>
-              <ActiveReferrals />
-            </Grid>
-            <Grid item sm={6} xs={12}>
-              <PendingInvitations />
-            </Grid>
-            <Grid item sm={6} xs={12}>
-              <BounceRate />
-            </Grid>
-            <Grid item sm={6} xs={12}>
-              <ConversionsAlt />
-            </Grid> */}
+            Profile
           </Grid>
         </Grid>
-        {/* <Grid item lg={4} md={6} xs={12}>
-          <SessionsByCountry />
-        </Grid>
-        <Grid item xs={12}>
-          <AudienceOverview />
-        </Grid>
-        <Grid item md={5} xs={12}>
-          <Conversions />
-        </Grid>
-        <Grid item md={7} xs={12}>
-          <TopLandingPages />
-        </Grid>
-        <Grid item xs={12}>
-          <TrafficSources />
-        </Grid> */}
       </Grid>
-      {/* <Footer /> */}
     </>
   );
 }

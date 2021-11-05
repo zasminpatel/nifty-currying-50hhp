@@ -18,8 +18,22 @@ const Loader = (Component) => (props) => (
 const LoginPage = Loader(lazy(() => import("./pages/auth/Login")));
 const RegisterPage = Loader(lazy(() => import("./pages/auth/Register")));
 
-const HomePage = Loader(lazy(() => import("./pages/front/Home")));
-const AboutUsPage = Loader(lazy(() => import("./pages/front/AboutUs")));
+// const HomePage = Loader(lazy(() => import("./pages/front/Home")));
+//const AboutUsPage = Loader(lazy(() => import("./pages/front/AboutUs")));
+const HomePage = Loader(
+  lazy(() => {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve(import("./pages/front/Home")), 3000);
+    });
+  })
+);
+const AboutUsPage = Loader(
+  lazy(() => {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve(import("./pages/front/AboutUs")));
+    });
+  })
+);
 const Status404Page = Loader(
   lazy(() => import("./pages/front/Status/Status404"))
 );
@@ -31,6 +45,7 @@ const StatusAdmin404Page = Loader(
 );
 const DashboardPage = Loader(lazy(() => import("./pages/admin/Dashboard")));
 const SettingPage = Loader(lazy(() => import("./pages/admin/Setting")));
+const ProfilePage = Loader(lazy(() => import("./pages/admin/Profile")));
 const routes = [
   {
     path: "app",
@@ -47,6 +62,10 @@ const routes = [
       {
         path: "setting",
         element: <SettingPage />
+      },
+      {
+        path: "profile",
+        element: <ProfilePage />
       },
       {
         path: "404",
@@ -85,24 +104,22 @@ const routes = [
     ]
   },
   {
-    path: "auth",
+    path: "login",
     element: <AuthLayout />,
     children: [
       {
         path: "",
-        element: <Navigate to="/auth/login" replace />
-      },
-      {
-        path: "login",
         element: <LoginPage />
-      },
+      }
+    ]
+  },
+  {
+    path: "register",
+    element: <AuthLayout />,
+    children: [
       {
-        path: "register",
+        path: "",
         element: <RegisterPage />
-      },
-      {
-        path: "*",
-        element: <Navigate to="/auth/login" replace />
       }
     ]
   },
