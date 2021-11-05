@@ -14,6 +14,9 @@ import Badge from "@mui/material/Badge";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import LogoutIcon from "@mui/icons-material/Logout";
+import GrainIcon from "@mui/icons-material/Grain";
+import DashboardIcon from "@mui/icons-material/Dashboard";
 //https://codesandbox.io/s/deopk?file=/demo.js
 
 const Header = () => {
@@ -119,7 +122,7 @@ const Header = () => {
 
   return (
     <>
-      <Box>
+      <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" style={{ background: "#2E3B55" }}>
           <Toolbar variant="dense">
             <IconButton
@@ -139,16 +142,19 @@ const Header = () => {
             >
               App
             </Typography>
+            <Box sx={{ flexGrow: 1 }} />
             <Button color="inherit" component={NavLink} to="/app/dashboard">
+              <DashboardIcon />
               Dashbaord
             </Button>
             <Button color="inherit" component={NavLink} to="/app/setting">
+              <GrainIcon />
               Setting
             </Button>
             <Button color="inherit" component={NavLink} to="/">
+              <LogoutIcon />
               Logout
             </Button>
-            <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               <IconButton
                 size="large"
